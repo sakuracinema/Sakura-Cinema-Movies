@@ -393,6 +393,101 @@
     <!-- Success/Error Messages -->
     <div id="messageContainer" class="message-container"></div>
 
+    <script>
+  const SHEET_API = "https://sheetdb.io/api/v1/0xz53sd14p2p7"; // your SheetDB link
+
+  // 🩷 Handle Review Submission
+  const reviewForm = document.getElementById("reviewForm");
+  reviewForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("reviewerName").value.trim();
+    const rating = document.getElementById("rating").value.trim();
+    const experience = document.getElementById("experience").value.trim();
+    const review = document.getElementById("reviewText").value.trim();
+
+    if (!name || !rating || !review) return alert("Please fill all fields.");
+
+    const reviewData = {
+      name,
+      rating,
+      experience,
+      review,
+      timestamp: new Date().toISOString(),
+    };
+
+    try {
+      await fetch(SHEET_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: [reviewData] }),
+      });
+
+      alert("✅ Review submitted!");
+      reviewForm.reset();
+      loadReviews();
+    } catch (err) {
+      console.error(err);
+      alert("❌ Failed to submit. Try again later.");
+    }
+  });
+
+  // 🌸 Load Reviews from Google Sheet
+  async function loadReviews() {
+    const container = document.getElementById("reviewsList");
+    container.innerHTML = `<div class="loading-reviews"><i class="fas fa-spinner fa-spin"></i> Loading reviews...</div>`;
+
+    try {
+      const res = await fetch(SHEET_API);
+      const data = await res.json();
+
+      if (!data.length) {
+        container.innerHTML = "<p>No reviews yet. Be the first!</p>";
+        return;
+      }
+
+      // Reverse order (latest first)
+      data.reverse();
+
+      const html = data.map(r => `
+        <div class="review-card">
+          <div class="review-header">
+            <strong>${r.name || "Anonymous"}</strong>
+            <span class="stars">⭐ ${r.rating || "N/A"}</span>
+          </div>
+          <p>${r.review || ""}</p>
+          <small>${r.experience || ""} • ${new Date(r.timestamp).toLocaleString()}</small>
+          <hr>
+        </div>
+      `).join("");
+
+      container.innerHTML = html;
+
+      // update counter
+      document.getElementById("totalReviews").textContent = data.length;
+    } catch (err) {
+      console.error(err);
+      container.innerHTML = "<p>⚠️ Unable to load reviews.</p>";
+    }
+  }
+
+  // ⭐ Star rating selector
+  document.querySelectorAll(".star").forEach(star => {
+    star.addEventListener("click", function() {
+      const rating = this.getAttribute("data-rating");
+      document.getElementById("rating").value = rating;
+
+      document.querySelectorAll(".star").forEach(s => s.classList.remove("selected"));
+      this.classList.add("selected");
+      this.previousElementSibling?.classList.add("selected");
+    });
+  });
+
+  // 🌀 Load reviews on page load
+  loadReviews();
+</script>
+
+
     <!-- Custom JavaScript -->
     <script src="js/main.js"></script>
 </body>
