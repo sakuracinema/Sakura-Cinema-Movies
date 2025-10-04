@@ -36,6 +36,7 @@
             </div>
             <div class="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
                 <a href="#reviews" class="nav-link">Reviews</a>
                 <a href="#suggestions" class="nav-link">Suggestions</a>
                 <a href="#about" class="nav-link">About</a>
@@ -71,6 +72,10 @@
                     </div>
                 </div>
                 <div class="hero-buttons">
+                    <a href="https://chat.whatsapp.com/KcwOoPYgVEE4iwu1OK6EwP?mode=ems_copy_t" target="_blank" class="btn btn-whatsapp btn-animated">
+                        <i class="fab fa-whatsapp"></i>
+                        Join Our WhatsApp Group
+                    </a>
                     <button class="btn btn-primary btn-animated" onclick="scrollToSection('reviews')">
                         <i class="fas fa-star"></i>
                         Leave a Review
@@ -114,6 +119,10 @@
                     </div>
                     <h3>Join Group</h3>
                     <p>Get added to our exclusive WhatsApp movie group</p>
+                    <a href="https://chat.whatsapp.com/KcwOoPYgVEE4iwu1OK6EwP?mode=ems_copy_t" target="_blank" class="btn btn-whatsapp btn-small btn-animated">
+                        <i class="fab fa-whatsapp"></i>
+                        Join Now
+                    </a>
                 </div>
                 <div class="step-card">
                     <div class="step-icon">
@@ -135,6 +144,204 @@
                     </div>
                     <h3>Auto Download</h3>
                     <p>Bot automatically downloads and shares the movie</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pricing Plans</h2>
+                <p class="section-subtitle">Choose the perfect package for your movie needs</p>
+                <div class="pricing-notice">
+                    <i class="fas fa-info-circle"></i>
+                    <span>🚧 <strong>Note:</strong> These are preliminary pricing plans and are not confirmed yet. Final prices may vary.</span>
+                </div>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Basic Package -->
+                <div class="pricing-card basic-plan">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h3 class="plan-name">Basic Package</h3>
+                        <div class="plan-price">
+                            <span class="currency">Rs.</span>
+                            <span class="amount">50</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature">
+                            <i class="fas fa-film"></i>
+                            <span><strong>3 Movies</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span><strong>5 Days</strong> validity</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-download"></i>
+                            <span>High quality downloads</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Fast delivery</span>
+                        </div>
+                    </div>
+                    <div class="plan-action">
+                        <button class="btn btn-primary btn-animated" onclick="selectPlan('basic')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Choose Basic
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="pricing-card premium-plan featured">
+                    <div class="popular-badge">
+                        <i class="fas fa-star"></i>
+                        Popular
+                    </div>
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="plan-name">Premium Package</h3>
+                        <div class="plan-price">
+                            <span class="currency">Rs.</span>
+                            <span class="amount">100</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature">
+                            <i class="fas fa-film"></i>
+                            <span><strong>6 Movies</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span><strong>10 Days</strong> validity</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-hd-video"></i>
+                            <span>HD & 4K quality options</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-zap"></i>
+                            <span>Priority delivery</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-language"></i>
+                            <span>Multiple subtitle options</span>
+                        </div>
+                    </div>
+                    <div class="plan-action">
+                        <button class="btn btn-whatsapp btn-animated" onclick="selectPlan('premium')">
+                            <i class="fas fa-crown"></i>
+                            Choose Premium
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Coming Soon Package -->
+                <div class="pricing-card coming-soon-plan">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="plan-name">More Packages</h3>
+                        <div class="plan-price">
+                            <span class="coming-soon-text">Coming Soon</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature">
+                            <i class="fas fa-infinity"></i>
+                            <span>Unlimited plans</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <span>Family packages</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-gift"></i>
+                            <span>Special offers</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Your suggested plans</span>
+                        </div>
+                    </div>
+                    <div class="plan-action">
+                        <button class="btn btn-secondary btn-animated" onclick="scrollToSection('suggestions')">
+                            <i class="fas fa-lightbulb"></i>
+                            Suggest Package
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Features Info -->
+            <div class="pricing-info">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h4>Flexible Usage</h4>
+                        <p>Used all movies but package not expired? No problem! Buy a new package anytime.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h4>Stackable Packages</h4>
+                        <p>Purchase multiple packages and they will stack together for more movies.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4>Community Driven</h4>
+                        <p>Suggest new package ideas and pricing. We listen to our community!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing FAQ -->
+            <div class="pricing-faq">
+                <h3><i class="fas fa-question-circle"></i> Frequently Asked Questions</h3>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>What happens if I use all movies before package expires?</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can purchase a new package anytime! Even if your current package hasn't expired yet, you can stack packages.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Can I suggest new packages and pricing?</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! We love community feedback. Use our suggestion form to propose new packages, pricing, or features.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Are these final prices?</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>These are preliminary prices and may change. We're still in testing phase and gathering user feedback.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -393,100 +600,11 @@
     <!-- Success/Error Messages -->
     <div id="messageContainer" class="message-container"></div>
 
-    <script>
-  const SHEET_API = "https://sheetdb.io/api/v1/0xz53sd14p2p7"; // your SheetDB link
-
-  // 🩷 Handle Review Submission
-  const reviewForm = document.getElementById("reviewForm");
-  reviewForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById("reviewerName").value.trim();
-    const rating = document.getElementById("rating").value.trim();
-    const experience = document.getElementById("experience").value.trim();
-    const review = document.getElementById("reviewText").value.trim();
-
-    if (!name || !rating || !review) return alert("Please fill all fields.");
-
-    const reviewData = {
-      name,
-      rating,
-      experience,
-      review,
-      timestamp: new Date().toISOString(),
-    };
-
-    try {
-      await fetch(SHEET_API, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data: [reviewData] }),
-      });
-
-      alert("✅ Review submitted!");
-      reviewForm.reset();
-      loadReviews();
-    } catch (err) {
-      console.error(err);
-      alert("❌ Failed to submit. Try again later.");
-    }
-  });
-
-  // 🌸 Load Reviews from Google Sheet
-  async function loadReviews() {
-    const container = document.getElementById("reviewsList");
-    container.innerHTML = `<div class="loading-reviews"><i class="fas fa-spinner fa-spin"></i> Loading reviews...</div>`;
-
-    try {
-      const res = await fetch(SHEET_API);
-      const data = await res.json();
-
-      if (!data.length) {
-        container.innerHTML = "<p>No reviews yet. Be the first!</p>";
-        return;
-      }
-
-      // Reverse order (latest first)
-      data.reverse();
-
-      const html = data.map(r => `
-        <div class="review-card">
-          <div class="review-header">
-            <strong>${r.name || "Anonymous"}</strong>
-            <span class="stars">⭐ ${r.rating || "N/A"}</span>
-          </div>
-          <p>${r.review || ""}</p>
-          <small>${r.experience || ""} • ${new Date(r.timestamp).toLocaleString()}</small>
-          <hr>
-        </div>
-      `).join("");
-
-      container.innerHTML = html;
-
-      // update counter
-      document.getElementById("totalReviews").textContent = data.length;
-    } catch (err) {
-      console.error(err);
-      container.innerHTML = "<p>⚠️ Unable to load reviews.</p>";
-    }
-  }
-
-  // ⭐ Star rating selector
-  document.querySelectorAll(".star").forEach(star => {
-    star.addEventListener("click", function() {
-      const rating = this.getAttribute("data-rating");
-      document.getElementById("rating").value = rating;
-
-      document.querySelectorAll(".star").forEach(s => s.classList.remove("selected"));
-      this.classList.add("selected");
-      this.previousElementSibling?.classList.add("selected");
-    });
-  });
-
-  // 🌀 Load reviews on page load
-  loadReviews();
-</script>
-
+    <!-- Floating WhatsApp Button -->
+    <a href="https://chat.whatsapp.com/KcwOoPYgVEE4iwu1OK6EwP?mode=ems_copy_t" target="_blank" class="floating-whatsapp" title="Join Our WhatsApp Group">
+        <i class="fab fa-whatsapp"></i>
+        <span class="pulse-ring"></span>
+    </a>
 
     <!-- Custom JavaScript -->
     <script src="js/main.js"></script>
