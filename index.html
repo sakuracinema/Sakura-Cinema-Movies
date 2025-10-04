@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAKURA CINEMA - Movie Bot Reviews & Suggestions</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="sakura-petals">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-torii-gate"></i>
+                <span>SAKURA CINEMA</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#suggestions" class="nav-link">Suggestions</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">SAKURA CINEMA</span>
+                    <div class="subtitle">WhatsApp Movie Bot</div>
+                </h1>
+                <p class="hero-description">
+                    Experience seamless movie downloads through our revolutionary WhatsApp bot. 
+                    Join our testing phase and help us create the ultimate movie streaming experience.
+                </p>
+                <div class="founder-info">
+                    <div class="founder">
+                        <i class="fas fa-user-crown"></i>
+                        <span>Founder: Pawan Athapaththu</span>
+                    </div>
+                    <div class="founder">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Co-Founder: Oneth Vinujana</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-animated" onclick="scrollToSection('reviews')">
+                        <i class="fas fa-star"></i>
+                        Leave a Review
+                    </button>
+                    <button class="btn btn-secondary btn-animated" onclick="scrollToSection('suggestions')">
+                        <i class="fas fa-lightbulb"></i>
+                        Share Ideas
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="bot-preview">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="whatsapp-chat">
+                                <div class="chat-header">
+                                    <div class="chat-avatar"></div>
+                                    <div class="chat-title">SAKURA BOT</div>
+                                </div>
+                                <div class="chat-messages">
+                                    <div class="message user-message">Demon Slayer movie please</div>
+                                    <div class="message bot-message">🎬 Downloading Demon Slayer...</div>
+                                    <div class="message bot-message">✅ Ready! Enjoy your movie!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Our Bot Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>Join Group</h3>
+                    <p>Get added to our exclusive WhatsApp movie group</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Add Bot</h3>
+                    <p>Our automated bot joins your group instantly</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3>Request Movie</h3>
+                    <p>Simply message the movie name you want</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Auto Download</h3>
+                    <p>Bot automatically downloads and shares the movie</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">User Reviews</h2>
+                <p class="section-subtitle">Share your experience with our WhatsApp movie bot</p>
+            </div>
+            
+            <div class="reviews-content">
+                <!-- Review Form -->
+                <div class="review-form-container">
+                    <form id="reviewForm" class="review-form">
+                        <h3><i class="fas fa-edit"></i> Write a Review</h3>
+                        
+                        <div class="form-group">
+                            <label for="reviewerName">Your Name</label>
+                            <input type="text" id="reviewerName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rating">Rating</label>
+                            <div class="star-rating">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                            <input type="hidden" id="rating" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">Bot Experience</label>
+                            <select id="experience" required>
+                                <option value="">Select your experience</option>
+                                <option value="excellent">Excellent - Perfect performance</option>
+                                <option value="good">Good - Works well with minor issues</option>
+                                <option value="average">Average - Decent but needs improvement</option>
+                                <option value="poor">Poor - Many problems</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reviewText">Your Review</label>
+                            <textarea id="reviewText" placeholder="Tell us about your experience with the SAKURA CINEMA bot..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-animated">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Review
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Reviews Display -->
+                <div class="reviews-display">
+                    <h3><i class="fas fa-comments"></i> Recent Reviews</h3>
+                    <div id="reviewsList" class="reviews-list">
+                        <div class="loading-reviews">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            Loading reviews...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suggestions Section -->
+    <section id="suggestions" class="suggestions-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Share Your Ideas</h2>
+                <p class="section-subtitle">Help us improve the bot with your creative suggestions</p>
+            </div>
+
+            <div class="suggestions-content">
+                <!-- Suggestion Form -->
+                <div class="suggestion-form-container">
+                    <form id="suggestionForm" class="suggestion-form">
+                        <h3><i class="fas fa-lightbulb"></i> Submit an Idea</h3>
+                        
+                        <div class="form-group">
+                            <label for="suggesterName">Your Name</label>
+                            <input type="text" id="suggesterName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="suggestionType">Suggestion Type</label>
+                            <select id="suggestionType" required>
+                                <option value="">Choose category</option>
+                                <option value="feature">New Feature</option>
+                                <option value="improvement">Improvement</option>
+                                <option value="ui">User Interface</option>
+                                <option value="performance">Performance</option>
+                                <option value="content">Content Related</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="priority">Priority Level</label>
+                            <select id="priority" required>
+                                <option value="">Select priority</option>
+                                <option value="high">🔴 High - Critical improvement</option>
+                                <option value="medium">🟡 Medium - Important feature</option>
+                                <option value="low">🟢 Low - Nice to have</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="suggestionTitle">Idea Title</label>
+                            <input type="text" id="suggestionTitle" placeholder="Brief title for your suggestion" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="suggestionText">Detailed Description</label>
+                            <textarea id="suggestionText" placeholder="Describe your idea in detail. How would it improve the bot experience?" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-secondary btn-animated">
+                            <i class="fas fa-rocket"></i>
+                            Submit Idea
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Suggestions Display -->
+                <div class="suggestions-display">
+                    <h3><i class="fas fa-brain"></i> Community Ideas</h3>
+                    <div class="suggestions-filter">
+                        <button class="filter-btn active" data-filter="all">All Ideas</button>
+                        <button class="filter-btn" data-filter="feature">Features</button>
+                        <button class="filter-btn" data-filter="improvement">Improvements</button>
+                        <button class="filter-btn" data-filter="ui">UI/UX</button>
+                    </div>
+                    <div id="suggestionsList" class="suggestions-list">
+                        <div class="loading-suggestions">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            Loading suggestions...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About SAKURA CINEMA</h2>
+                    <p>
+                        We're revolutionizing movie accessibility through innovative WhatsApp automation. 
+                        Our bot provides seamless movie downloading directly in your chat groups, making 
+                        entertainment more accessible than ever before.
+                    </p>
+                    <p>
+                        Currently in testing phase, we're gathering valuable feedback from users like you 
+                        to create the perfect movie bot experience. Join our community and help shape 
+                        the future of digital entertainment.
+                    </p>
+                    
+                    <div class="team-info">
+                        <h3>Our Team</h3>
+                        <div class="team-members">
+                            <div class="team-member">
+                                <div class="member-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Pawan Athapaththu</h4>
+                                    <p>Founder & CEO</p>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Oneth Vinujana</h4>
+                                    <p>Co-Founder & CTO</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>0718142751</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Online Business</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalReviews">0</div>
+                            <div class="stat-label">Reviews</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalSuggestions">0</div>
+                            <div class="stat-label">Suggestions</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5.0</div>
+                            <div class="stat-label">Avg Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-torii-gate"></i>
+                        <span>SAKURA CINEMA</span>
+                    </div>
+                    <p>Bringing movies to your WhatsApp, one bot at a time.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Testing Phase</h4>
+                    <p>We're currently in beta testing. Your feedback helps us improve!</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> 0718142751</p>
+                    <p><i class="fas fa-globe"></i> Online Business</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SAKURA CINEMA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success/Error Messages -->
+    <div id="messageContainer" class="message-container"></div>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
