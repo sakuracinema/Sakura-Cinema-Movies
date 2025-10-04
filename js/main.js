@@ -16,6 +16,7 @@ function initializeApp() {
     loadSuggestions();
     updateStats();
     setupMobileMenu();
+    setupPricingSection();
 }
 
 // ===== NAVIGATION =====
@@ -717,12 +718,162 @@ window.addEventListener('unhandledrejection', function(e) {
     e.preventDefault();
 });
 
+// ===== PRICING FUNCTIONALITY =====
+function setupPricingSection() {
+    setupPricingFAQ();
+}
+
+function setupPricingFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', function() {
+                // Close other open items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        }
+    });
+}
+
+function selectPlan(planType) {
+    const plans = {
+        basic: {
+            name: 'Basic Package',
+            price: 'Rs. 50',
+            movies: '3 movies',
+            validity: '5 days'
+        },
+        premium: {
+            name: 'Premium Package',
+            price: 'Rs. 100',
+            movies: '6 movies',
+            validity: '10 days'
+        }
+    };
+    
+    const selectedPlan = plans[planType];
+    if (!selectedPlan) return;
+    
+    // Create WhatsApp message
+    const message = `🎬 *SAKURA CINEMA - Package Selection*\n\n` +
+                   `📦 **Package:** ${selectedPlan.name}\n` +
+                   `💰 **Price:** ${selectedPlan.price}\n` +
+                   `🎥 **Movies:** ${selectedPlan.movies}\n` +
+                   `⏰ **Validity:** ${selectedPlan.validity}\n\n` +
+                   `Hi! I'm interested in purchasing the ${selectedPlan.name}. ` +
+                   `Please provide payment details and setup instructions.\n\n` +
+                   `*Note: These are preliminary prices and may change.*`;
+    
+    // Encode message for WhatsApp URL
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/94718142751?text=${encodedMessage}`;
+    
+    // Show confirmation dialog
+    const confirmMessage = `You've selected the ${selectedPlan.name} (${selectedPlan.price}).\n\n` +
+                          `This will open WhatsApp to contact our team.\n\n` +
+                          `⚠️ Note: These are preliminary prices and not confirmed yet.`;
+    
+    if (confirm(confirmMessage)) {
+        // Open WhatsApp
+        window.open(whatsappURL, '_blank');
+        
+        // Show success message
+        showMessage(`Great choice! Opening WhatsApp to discuss the ${selectedPlan.name}...`, 'success');
+        
+        // Track selection (for analytics)
+        trackPlanSelection(planType, selectedPlan);
+    }
+}
+
+function trackPlanSelection(planType, planDetails) {
+    // Store selection data for analytics
+    const selectionData = {
+        plan_type: planType,
+        plan_name: planDetails.name,
+        price: planDetails.price,
+        timestamp: new Date().toISOString(),
+        user_agent: navigator.userAgent
+    };
+    
+    // Save to localStorage for future analytics
+    const selections = JSON.parse(localStorage.getItem('sakura_plan_selections') || '[]');
+    selections.push(selectionData);
+    
+    // Keep only last 50 selections
+    if (selections.length > 50) {
+        selections.splice(0, selections.length - 50);
+    }
+    
+    localStorage.setItem('sakura_plan_selections', JSON.stringify(selections));
+    
+    console.log('Plan selection tracked:', selectionData);
+}
+
+// Add pricing-related suggestion options
+function setupSuggestionForm() {
+    const suggestionForm = document.getElementById('suggestionForm');
+    if (suggestionForm) {
+        // Add pricing option to suggestion type if not exists
+        const suggestionTypeSelect = document.getElementById('suggestionType');
+        if (suggestionTypeSelect) {
+            const hasPricingOption = Array.from(suggestionTypeSelect.options)
+                .some(option => option.value === 'pricing');
+            
+            if (!hasPricingOption) {
+                const pricingOption = new Option('Pricing & Packages', 'pricing');
+                suggestionTypeSelect.add(pricingOption);
+            }
+        }
+        
+        suggestionForm.addEventListener('submit', handleSuggestionSubmission);
+    }
+}
+
+// Update the suggestion type icons to include pricing
+function getTypeIcon(type) {
+    const icons = {
+        feature: 'fas fa-plus-circle',
+        improvement: 'fas fa-arrow-up',
+        ui: 'fas fa-paint-brush',
+        performance: 'fas fa-tachometer-alt',
+        content: 'fas fa-file-alt',
+        pricing: 'fas fa-money-bill-wave',
+        other: 'fas fa-question-circle'
+    };
+    return icons[type] || 'fas fa-lightbulb';
+}
+
+// Update the suggestion type formatting
+function formatType(type) {
+    const formatted = {
+        feature: 'New Feature',
+        improvement: 'Improvement',
+        ui: 'UI/UX',
+        performance: 'Performance',
+        content: 'Content',
+        pricing: 'Pricing & Packages',
+        other: 'Other'
+    };
+    return formatted[type] || type;
+}
+
 // ===== EXPORT FOR TESTING =====
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         validateReviewData,
         validateSuggestionData,
         formatDate,
-        escapeHtml
+        escapeHtml,
+        selectPlan,
+        trackPlanSelection
     };
 }
