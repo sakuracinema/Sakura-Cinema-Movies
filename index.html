@@ -15,8 +15,25 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Animated Background -->
+    <!-- Video Background - Demon Slayer Inspired -->
+    <div class="video-background">
+        <video autoplay muted loop id="demonSlayerVideo" class="background-video">
+            <source src="videos/fire-demon.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Video overlay for better text readability -->
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Background Audio - Your Name Sparkle -->
+    <audio id="backgroundAudio" loop>
+        <source src="audio/sparkle.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Enhanced Animated Background - Demon Slayer & Ghibli Inspired -->
     <div class="animated-bg">
+        <!-- Sakura Petals -->
         <div class="sakura-petals">
             <div class="petal"></div>
             <div class="petal"></div>
@@ -24,7 +41,47 @@
             <div class="petal"></div>
             <div class="petal"></div>
             <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
         </div>
+        
+        <!-- Fire Effects (Rengoku Style) -->
+        <div class="fire-effects">
+            <div class="flame-particle"></div>
+            <div class="flame-particle"></div>
+            <div class="flame-particle"></div>
+            <div class="flame-particle"></div>
+            <div class="flame-particle"></div>
+            <div class="flame-particle"></div>
+        </div>
+        
+        <!-- Ice/Frost Effects (Giyu Water Style) -->
+        <div class="ice-effects">
+            <div class="ice-crystal"></div>
+            <div class="ice-crystal"></div>
+            <div class="ice-crystal"></div>
+            <div class="ice-crystal"></div>
+            <div class="ice-crystal"></div>
+        </div>
+        
+        <!-- Ghibli-Style Magic Orbs -->
+        <div class="magic-orbs">
+            <div class="orb"></div>
+            <div class="orb"></div>
+            <div class="orb"></div>
+            <div class="orb"></div>
+            <div class="orb"></div>
+        </div>
+
+        <!-- Lightning Effects (Zenitsu Style) -->
+        <div class="lightning-effects">
+            <div class="lightning-bolt"></div>
+            <div class="lightning-bolt"></div>
+            <div class="lightning-bolt"></div>
+        </div>
+        
+        <!-- Breathing Technique Overlay -->
+        <div class="breathing-overlay"></div>
     </div>
 
     <!-- Navigation -->
@@ -40,6 +97,17 @@
                 <a href="#reviews" class="nav-link">Reviews</a>
                 <a href="#suggestions" class="nav-link">Suggestions</a>
                 <a href="#about" class="nav-link">About</a>
+            </div>
+            <div class="nav-controls">
+                <button id="videoToggle" class="video-control-btn" title="Toggle Video Background">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="audioToggle" class="video-control-btn" title="Toggle Background Music">
+                    <i class="fas fa-music"></i>
+                </button>
+                <button id="soundToggle" class="video-control-btn" title="Toggle All Sound">
+                    <i class="fas fa-volume-mute"></i>
+                </button>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -60,6 +128,8 @@
                 <p class="hero-description">
                     Experience seamless movie downloads through our revolutionary WhatsApp bot. 
                     Join our testing phase and help us create the ultimate movie streaming experience.
+                    <br><br>
+                    <span class="demon-slayer-quote">"Set your heart ablaze!" - Kyojuro Rengoku</span>
                 </p>
                 <div class="founder-info">
                     <div class="founder">
@@ -539,7 +609,7 @@
                         <h3>Get in Touch</h3>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span>0706822208</span>
+                            <span>0718142751</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-globe"></i>
@@ -587,7 +657,7 @@
                 
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p><i class="fas fa-phone"></i> 0706822208</p>
+                    <p><i class="fas fa-phone"></i> 0718142751</p>
                     <p><i class="fas fa-globe"></i> Online Business</p>
                 </div>
             </div>
