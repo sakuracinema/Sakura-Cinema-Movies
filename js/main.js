@@ -844,10 +844,11 @@ function scrollToSection(sectionId) {
 }
 
 function selectPlan(planType) {
-    const whatsappUrl = 'https://chat.whatsapp.com/KcwOoPYgVEE4iwu1OK6EwP?mode=ems_copy_t';
+    const phoneNumber = '94706822208'; // 070 682 2208 in international format
     const message = `Hi! I'm interested in the ${planType} package. Can you provide more details?`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
-    window.open(`${whatsappUrl}&text=${encodeURIComponent(message)}`, '_blank');
+    window.open(whatsappUrl, '_blank');
 }
 
 // ===== FAQ FUNCTIONALITY =====
